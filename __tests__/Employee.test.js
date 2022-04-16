@@ -5,39 +5,39 @@ test('creates Employee object', () => {
   expect(typeof(e)).toBe('object');
 });
 
-test('get employee name', () => {
+test('set employee name', () => {
   const name = 'William';
   const e = new Employee(name);
   expect(e.name).toBe(name);
 });
 
-test("get employee id", () => {
+test("set employee id", () => {
   const testValue = 101;
-  const e = new Employee('bogus', testValue);
+  const e = new Employee('William', testValue);
   expect(e.id).toBe(testValue);
 });
 
-test("get employee email", () => {
+test("set employee email", () => {
   const testValue = "william@test.com";
-  const e = new Employee('bogus', 1, testValue);
+  const e = new Employee('William', 1, testValue);
   expect(e.email).toBe(testValue);
 });
 
-test("Can get name via getName()", () => {
-  const testValue = "William";
+test("get name via getName()", () => {
+  const testValue = 'William';
   const e = new Employee(testValue);
   expect(e.getName()).toBe(testValue);
 });
 
-test("Can get id via getId()", () => {
+test("get id via getId()", () => {
   const testValue = 101;
-  const e = new Employee("bogus", testValue);
+  const e = new Employee('William', testValue);
   expect(e.getId()).toBe(testValue);
 });
 
-test("Can get email via getEmail()", () => {
+test("get email via getEmail()", () => {
   const testValue = "william@test.com";
-  const e = new Employee("bogus", 1, testValue);
+  const e = new Employee("William", 1, testValue);
   expect(e.getEmail()).toBe(testValue);
 });
 
