@@ -1,20 +1,12 @@
-const { test, expect } = require('@jest/globals');
+// import Engineer.js file
 const Engineer = require('../lib/Engineer');
 
-test('set GitHub username', () => {
-  const testValue = 'bogusUser';
-  const e = new Engineer('William', 1, 'william@test.com', testValue);
-  expect(e.github).toBe(testValue);
-});
+// create new Engineer
+test('create a new Engineer', () => {
+  const engineer = new Engineer('William Engineer', 3, 'william@engineer.com', 'williamgitub')
 
-test('getRole() should return "Engineer"', () => {
-  const testValue = 'Engineer';
-  const e = new Engineer("William", 1, "william@test.com");
-  expect(e.getRole()).toBe(testValue);
-});
-
-test('get GitHub username via getGitHub', () => {
-  const testValue = 'bogusUser';
-  const e = new Engineer('William', 1, 'william@test.com', testValue)
-  expect(e.getGitHub()).toBe(testValue);
+  expect(engineer.name).toEqual(expect.any(String))
+  expect(engineer.id).toEqual(expect.any(Number));
+  expect(engineer.email).toEqual(expect.any(String));
+  expect(engineer.github).toEqual(expect.any(String));
 });

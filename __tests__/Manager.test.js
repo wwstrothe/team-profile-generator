@@ -1,19 +1,12 @@
+// import Manager.js file
 const Manager = require('../lib/Manager');
 
-test('Set Office number', () => {
-  const testValue = 201;
-  const e = new Manager('William', 1, 'william@test.com', testValue)
-  expect(e.officeNumber).toBe(testValue);
-});
+// create new Manager
+test('create a new Manager', () => {
+  const manager = new Manager('William Manager', 2, 'william@manager.com', 934);
 
-test('getRole() should return "Manager"', () => {
-  const testValue = "Manager";
-  const e = new Manager("William", 1, "william@test.com");
-  expect(e.getRole()).toBe(testValue);
-});
-
-test("get office number  via getOffice()", () => {
-  const testValue = 201;
-  const e = new Manager("William", 1, "william@test.com", testValue);
-  expect(e.getOfficeNumber()).toBe(testValue);
+  expect(manager.name).toEqual(expect.any(String));
+  expect(manager.id).toEqual(expect.any(Number));
+  expect(manager.email).toEqual(expect.any(String));
+  expect(manager.officeNumber).toEqual(expect.any(Number));
 });

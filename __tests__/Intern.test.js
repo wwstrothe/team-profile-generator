@@ -1,19 +1,12 @@
+// import Intern.js file
 const Intern = require("../lib/Intern");
 
-test("set school", () => {
-  const testValue = "South Harmon Institute of Technology";
-  const e = new Intern("William", 1, "william@test.com", testValue);
-  expect(e.school).toBe(testValue);
-});
+// create new Intern
+test("creates a new Intern", () => {
+  const intern = new Intern('William Intern', 4, 'william@intern.com', 'college dropout');
 
-test('getRole() should return "Intern"', () => {
-  const testValue = "Intern";
-  const e = new Intern("William", 1, "william@test.com");
-  expect(e.getRole()).toBe(testValue);
-});
-
-test("get GitHub username via getGitHub", () => {
-  const testValue = "bogusUser";
-  const e = new Intern("William", 1, "william@test.com", testValue);
-  expect(e.getSchool()).toBe(testValue);
+  expect(intern.name).toEqual(expect.any(String));
+  expect(intern.id).toEqual(expect.any(Number));
+  expect(intern.email).toEqual(expect.any(String));
+  expect(intern.school).toEqual(expect.any(String));
 });

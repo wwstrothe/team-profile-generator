@@ -14,27 +14,27 @@ const mQuestions = () => {
     {
       type: 'input',
       name: 'name',
-      message: "What is the team manager's name?",
+      message: "What is the Manager's name?",
     },
     {
       type: 'input',
       name: 'id',
-      message: "What is the team manager's id?",
+      message: "What is the Manager's ID number?",
     },
     {
       type: 'input',
       name: 'email',
-      message: "What is the team manager's email?",
+      message: "What is the Manager's email address?",
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: "What is the team manager's office number?",
+      message: "What is the Manager's office number?",
     },
     {
       type: 'list',
       name: 'addMember',
-      message: 'What type of Team Member would you like to add?',
+      message: 'What type of Team Member would you like to add next?',
       choices: ['Engineer', 'Intern', 'No more Team Members'],
     }
   ])
@@ -65,27 +65,27 @@ const eQuestions = () => {
       {
         type: "input",
         name: "name",
-        message: "What is the tEngineers's name?",
+        message: "What is the Engineer's name?",
       },
       {
         type: "input",
         name: "id",
-        message: "What is the Engineers's id?",
+        message: "What is the Engineer's ID number?",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the Engineer's email?",
+        message: "What is the Engineer's email address?",
       },
       {
         type: "input",
         name: "github",
-        message: "What is the Engineers GitHub username?",
+        message: "What is the Engineer's GitHub username?",
       },
       {
         type: "list",
         name: "addMember",
-        message: "What type of Team Member would you like to add?",
+        message: "What type of Team Member would you like to add next?",
         choices: ["Engineer", "Intern", "No more Team Members"],
       },
     ])
@@ -122,22 +122,22 @@ const iQuestions = () => {
       {
         type: "input",
         name: "id",
-        message: "What is the Intern's id?",
+        message: "What is the Intern's ID number?",
       },
       {
         type: "input",
         name: "email",
-        message: "What is the Intern's email?",
+        message: "What is the Intern's email address?",
       },
       {
         type: "input",
         name: "school",
-        message: "What is the Intern's school",
+        message: "What is the Intern's school?",
       },
       {
         type: "list",
         name: "addMember",
-        message: "What type of Team Member would you like to add?",
+        message: "What type of Team Member would you like to add next?",
         choices: ["Engineer", "Intern", "No more Team Members"],
       },
     ])
@@ -146,7 +146,7 @@ const iQuestions = () => {
         iAnswers.id,
         iAnswers.name,
         iAnswers.email,
-        iAnswers.github
+        iAnswers.school
       );
       team.push(intern);
       switch (iAnswers.addMember) {
@@ -167,6 +167,6 @@ mQuestions();
 function writeToFile(filename, data) {
     fs.writeFile(filename, data, (err) => {
         if(err) throw err;
-        console.log('file saved')
+        console.log(`File saved to ${filename}`)
     });
 };
